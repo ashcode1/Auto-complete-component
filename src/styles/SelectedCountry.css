@@ -1,0 +1,13 @@
+.selected-country-container {
+  text-align: center;
+}
+
+.selected-country {
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+}
+
+.flag {
+  font-size: 60px;
+}

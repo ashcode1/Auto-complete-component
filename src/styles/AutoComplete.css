@@ -2,20 +2,23 @@
   background-color: #0b2f6c;
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 100vh;
+}
+
+.instruction {
+  color: #fff;
 }
 
 .autocomplete {
   position: relative;
+  margin-top: 25vh;
+
   width: 400px;
 }
 
 .loading {
   width: 100%;
   position: absolute;
-  border-top: none;
-  list-style: none;
   color: #fff;
 }
 
@@ -25,26 +28,5 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-}
-
-.suggestions-list {
-  position: absolute;
-  border: 1px solid #ccc;
-  border-top: none;
-  list-style: none;
-  margin-top: 0;
-  padding-left: 0;
-  width: 100%;
-  z-index: 99;
-  box-sizing: border-box;
-}
-
-.suggestion-item {
-  padding: 10px;
-  cursor: pointer;
-  background-color: #fff;
-}
-
-.suggestion-item:hover {
-  background-color: #f2f2f2;
+  font-size: 16px;
 }

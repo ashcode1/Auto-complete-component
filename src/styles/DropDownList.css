@@ -1,0 +1,21 @@
+.list {
+  position: absolute;
+  border: 1px solid #ccc;
+  border-top: none;
+  list-style: none;
+  margin-top: 0;
+  padding-left: 0;
+  width: 100%;
+  z-index: 99;
+  box-sizing: border-box;
+}
+
+.list-item {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.list-item:hover {
+  background-color: #f2f2f2;
+}

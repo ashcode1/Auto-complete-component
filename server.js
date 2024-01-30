@@ -54,7 +54,29 @@ app.use(express.json());
 
 app.get("/api/search", (req, res) => {
   const { query } = req.query;
-  const filteredData = mockData.filter((item) => isSimilar(item.name, query));
+
+  let filteredData = mockData
+    .map((item) => {
+      // Calculate similarity score for each item
+      let score = 0;
+      const itemNameLower = item.name.toLowerCase();
+      const queryLower = query.toLowerCase();
+
+      if (itemNameLower === queryLower) {
+        score = 1; // Highest score for direct match
+      } else if (itemNameLower.startsWith(queryLower)) {
+        score = 0.9; // High score for prefix match
+      } else if (itemNameLower.includes(queryLower)) {
+        score = 0.8; // Lower score for substring match
+      } else {
+        const similarity = isSimilar(itemNameLower, queryLower);
+        score = similarity ? 0.5 : 0;
+      }
+
+      return { ...item, score };
+    })
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score);
 
   setTimeout(() => {
     res.json(filteredData);

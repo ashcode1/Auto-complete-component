@@ -29,6 +29,23 @@ export const mockData = [
   { id: 25, name: "Zimbabwe", flag: "🇿🇼" },
 ];
 
+function isSimilar(a, b) {
+  let similarity = 0;
+
+  for (let i = 0; i < b.length; i++) {
+    if (a.toLowerCase().includes(b[i].toLowerCase())) {
+      similarity++;
+    }
+  }
+
+  let threshold = 0.1;
+  if (b.length === 1) {
+    threshold = 0.05;
+  }
+
+  return similarity / b.length > threshold;
+}
+
 const app = express();
 const PORT = 8000;
 
@@ -37,10 +54,7 @@ app.use(express.json());
 
 app.get("/api/search", (req, res) => {
   const { query } = req.query;
-
-  const filteredData = mockData.filter((item) =>
-    item.name.toLowerCase().includes(query.toLowerCase())
-  );
+  const filteredData = mockData.filter((item) => isSimilar(item.name, query));
 
   setTimeout(() => {
     res.json(filteredData);

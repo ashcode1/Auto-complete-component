@@ -1,3 +1,56 @@
+# Auto-Complete Component in React
+
+This project demonstrates a simple implementation of an auto-complete feature using React functional components and hooks. It shows how real-time suggestions can be offered to users as they type in an input field.
+
+## Features
+
+- **Dynamic Search Suggestions**: Provides immediate feedback by displaying a list of country suggestions that match the user's input.
+- **Selection Interaction**: Allows users to select a suggested country from the dropdown, displaying the chosen country's name and flag to confirm the selection.
+- **Emoji Flags**: Provide some visual feedback by representing each country with its corresponding flag emoji above the country name for a nice user experience.
+- **Loading Text**: Let's the user know when the query is being handled.
+
+## Tech Stack
+
+- **React**: Built with functional components and hooks (`useState`, `useEffect` etc) for managing state and side effects.
+- **CSS**: Basic styling to ensure a clean and straightforward user interface.
+- **Express**: A simple server to provide the client with mock data upon request.
+
+## Data
+
+The server uses a predefined array of country names as mock data for suggestions. There is one country for each letter of the alphabet (apart from "X"!).
+
+```javascript
+const mockData = [
+
+  { id: 1, name: "Australia", flag: "🇦🇺" },
+  { id: 2, name: "Brazil", flag: "🇧🇷" },
+  { id: 3, name: "Canada", flag: "🇨🇦" },
+
+...
+```
+
+## Running the Project
+
+To run this project locally:
+
+1. **Clone the Repository**: Use `git clone` to copy the project to your local machine.
+2. **Install Dependencies**: Navigate to the project directory and execute `npm install`.
+3. **Run the Server**: In the root directory run `node server.js` to start the backend that serves up country data. (Running on port 8000)
+4. **Start the Application**: In another terminal also root level - launch the React app by running `npm start`. It should automatically open in your default web browser.(Running on port 3000)
+
+## Production Considerations
+
+For a production-ready application, I would consider the following enhancements:
+
+- **API Integration**: Fetch suggestions from a live backend service.
+- **Input Debouncing**: Implement debouncing to minimize the rate of API calls as the user types.
+- **Accessibility**: Ensure full keyboard navigation and screen reader support.
+- **Advanced Styling**: Use a CSS preprocessor or CSS-in-JS for more dynamic styling.
+- **Testing**: Incorporate a testing framework eg. Jest along with React Testing Library for comprehensive testing.
+- **Security**: Sanitise inputs to prevent XSS and secure API communications.
+
+. . . . . . . . . . . . . . . . . . . .
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

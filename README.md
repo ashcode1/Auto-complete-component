@@ -7,6 +7,7 @@ This project demonstrates a simple implementation of an auto-complete feature us
 ## Features
 
 - **Dynamic Search Suggestions**: Provides immediate feedback by displaying a list of country suggestions that match the user's input.
+- **Fuzzy Search**: Provides similar matches to misspelt words eg. "Brasil" --> "Brazil", or to intial characters that only match in the middle of suggestions eg. "x" --> "Luxembourg".
 - **Selection Interaction**: Allows users to select a suggested country from the dropdown, displaying the chosen country's name and flag to confirm the selection.
 - **Emoji Flags**: Provide some visual feedback by representing each country with its corresponding flag emoji above the country name for a nice user experience.
 - **Loading Text**: Let's the user know when the query is being handled.

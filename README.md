@@ -2,6 +2,8 @@
 
 # Auto-Complete Component in React
 
+![Alt text](src/images/sc_preview.png "Optional title")
+
 This project demonstrates a simple implementation of an auto-complete feature using React functional components and hooks. It shows how real-time suggestions can be offered to users as they type in an input field.
 
 ## Features
